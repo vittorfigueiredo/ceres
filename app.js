@@ -1,6 +1,6 @@
 require("dotenv").config();
 const express = require("express");
-const { UploadController } = require("./src/controllers/sendImage");
+const { UploadController } = require("./src/controllers/UploadController");
 
 const app = express();
 const port = 3333;

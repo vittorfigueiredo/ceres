@@ -1,6 +1,6 @@
-const { s3Client } = require("./s3client");
-const { makeFileName } = require("./makeFileName");
+const { s3Client } = require("../database/S3Client");
 const { PutObjectCommand } = require("@aws-sdk/client-s3");
+const { makeFileName } = require("../functions/MakeFileName");
 
 class UploadController {
   async send(request, response) {
