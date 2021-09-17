@@ -30,8 +30,6 @@ class UploadController {
       })
     }
 
-  console.log("cheguei aqui");
-
     const params = {
       Bucket: process.env.AWS_BUCKET,
       Key: makeFileName(32) + ".jpg",
@@ -53,7 +51,7 @@ class UploadController {
 
       return response.json({
         success: true,
-        URL: "https://vitorfigueiredo.s3.us-east-2.amazonaws.com/" + params.Key,
+        URL: `https://${process.env.AWS_BUCKET}.s3.${process.env.AWS_REGION}.amazonaws.com/${params.Key}`,
         output: s3Client.GetObjectOutput,
       });
     } catch (err) {
