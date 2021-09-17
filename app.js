@@ -14,6 +14,6 @@ app.get("/", (request, response) => {
 
 app.post("/upload", uploadController.send);
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 3333, () => {
   console.log(`Running in http://localhost:${process.env.PORT}`);
 });
