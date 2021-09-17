@@ -3,7 +3,6 @@ const express = require("express");
 const { UploadController } = require("./src/controllers/UploadController");
 
 const app = express();
-const port = 3333;
 
 app.use(express.json());
 
@@ -16,5 +15,5 @@ app.get("/", (request, response) => {
 app.post("/upload", uploadController.send);
 
 app.listen(port, () => {
-  console.log(`Running in http://localhost:${port}`);
+  console.log(`Running in http://localhost:${process.env.PORT}`);
 });
