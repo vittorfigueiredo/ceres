@@ -1,10 +1,11 @@
 {
-  "name": "send-image",
+  "name": "upload",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "dev": "nodemon ./app.js localhost 3333"
   },
   "author": "Vitor Figueiredo",
   "license": "ISC",
@@ -16,6 +17,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "@types/node": "^14.0.23"
+    "@types/node": "^14.0.23",
+    "nodemon": "^2.0.12"
   }
 }
