@@ -1,5 +1,5 @@
 const express = require("express");
-const { verifyJWT } = require("./src/middlewares/authorizationMiddleware");
+const { verifyJWT } = require("./src/middlewares/AuthorizationMiddleware");
 const { UploadController } = require("./src/controllers/UploadController");
 const { AuthenticationController } = require("./src/controllers/AuthenticationController");
 
