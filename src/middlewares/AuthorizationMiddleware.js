@@ -4,17 +4,17 @@ function verifyJWT(request, response, next) {
   const token = request.headers["token"];
 
   if (!token) {
-    return response.status(500).json({
+    return response.status(401).json({
       auth: false,
-      message: "Failed to authenticate token."
+      message: "Unauthorized!"
     });
   }
 
   jwt.verify(token, process.env.JWT_SECRET, function(err, decoded) {
     if (err) {
-      return response.status(500).json({
+      return response.status(401).json({
         auth: false,
-        message: "Failed to authenticate token"
+        message: "Unauthorized!"
       });
     }
     request.userId = decoded.id;
