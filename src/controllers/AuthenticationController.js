@@ -11,12 +11,12 @@ class AuthenticationController {
         expiresIn: "1d"
       });
 
-      return response.json({
+      return response.status(201).json({
         auth: true,
         token: token
       });
     }
-    response.status(500).json({
+    return response.status(401).json({
       message: "Login inválido!"
     });
   }
