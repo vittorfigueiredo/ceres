@@ -8,14 +8,14 @@ class UploadController {
     const { base64 } = request.body;
 
     if (base64 === undefined) {
-      return response.json({
+      return response.status(400).json({
         success: false,
         message: "O parâmetro base64 é obrigatório!"
       });
     }
 
     if (base64.length === 0) {
-      return response.json({
+      return response.status(400).json({
         success: false,
         message: "O parâmetro base64 não pode ser vazio!"
       });
@@ -24,7 +24,7 @@ class UploadController {
     const isBase64 = verifyBase64(base64);
 
     if (!isBase64) {
-      return response.json({
+      return response.status(400).json({
         success: false,
         message: "Informe um base64 válido!"
       })
@@ -43,16 +43,15 @@ class UploadController {
       const results = await s3Client.send(new PutObjectCommand(params));
 
       if (results.$metadata.httpStatusCode !== 200) {
-        return response.json({
+        return response.status(500).json({
           success: false,
           message: "Erro inesperado!"
         });
       }
 
-      return response.json({
+      return response.status(201).json({
         success: true,
         URL: `https://${process.env.AWS_BUCKET}.s3.${process.env.AWS_REGION}.amazonaws.com/${params.Key}`,
-        output: s3Client.GetObjectOutput,
       });
     } catch (err) {
       console.log("Error", err);
