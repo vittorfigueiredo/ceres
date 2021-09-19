@@ -43,7 +43,7 @@ class AuthenticationController {
       });
 
       return response.status(201).json({
-        auth: true,
+        success: true,
         token: token,
       });
     }
