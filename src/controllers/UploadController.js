@@ -66,7 +66,7 @@ class UploadController {
 
         return response.status(201).json({
           success: true,
-          URL: `https://${process.env.AWS_BUCKET}.s3.${process.env.AWS_REGION}.amazonaws.com/${params.Key}`,
+          url: `https://${process.env.AWS_BUCKET}.s3.${process.env.AWS_REGION}.amazonaws.com/${params.Key}`,
         });
       } catch (err) {
         console.log("Error", err);
