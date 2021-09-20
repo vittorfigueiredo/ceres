@@ -1,22 +1,21 @@
 {
-  "name": "upload",
+  "name": "ceres",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
+  "license": "MIT",
+  "private": true,
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon ./app.js localhost 3333"
   },
   "author": "Vitor Figueiredo",
-  "license": "ISC",
   "dependencies": {
     "@aws-sdk/client-s3": "^3.3.0",
     "@aws-sdk/node-http-handler": "^3.3.0",
     "@aws-sdk/types": "^3.3.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1"
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "@types/node": "^14.0.23",
