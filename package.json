@@ -8,7 +8,6 @@
     "start": "node app.js",
     "dev": "nodemon ./app.js localhost 3333"
   },
-  "author": "Vitor Figueiredo",
   "dependencies": {
     "@aws-sdk/client-s3": "^3.3.0",
     "@aws-sdk/node-http-handler": "^3.3.0",
