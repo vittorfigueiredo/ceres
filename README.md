@@ -1,4 +1,4 @@
-# AWS3 Send Image Application
+# ceres
 
 ### How to install?
 
