@@ -47,11 +47,13 @@ class UploadController {
 
       const params = {
         Bucket: process.env.AWS_BUCKET,
-        Key: makeFileName(32) + "." + extension === "pdf" ? "pdf" : "jpg",
+        Key: extension === "pdf" ? `${makeFileName(32)}.pdf` : `${makeFileName(32)}.jpg`,
         Body: Buffer.from(base64, "base64"),
         ContentEncoding: "base64",
         ContentType: extension === "pdf" ? "application/pdf" : "image/jpeg",
       };
+
+      console.log(params);
 
       // Create an object and upload it to rhe Amazon S3 bucket.
       try {
