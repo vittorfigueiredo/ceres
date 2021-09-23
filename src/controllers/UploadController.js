@@ -47,7 +47,7 @@ class UploadController {
 
       const params = {
         Bucket: process.env.AWS_BUCKET,
-        Key: makeFileName(32) + ".jpg",
+        Key: makeFileName(32) + "." + extension === "pdf" ? "pdf" : "jpg",
         Body: Buffer.from(base64, "base64"),
         ContentEncoding: "base64",
         ContentType: extension === "pdf" ? "application/pdf" : "image/jpeg",
