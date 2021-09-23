@@ -5,7 +5,7 @@ const { verifyBase64 } = require("../functions/VerifyBase64");
 
 class UploadController {
   async send(request, response) {
-    const { base64, secret } = request.body;
+    const { base64, secret, extension } = request.body;
 
     if (secret === undefined) {
       return response.status(400).json({
@@ -50,7 +50,7 @@ class UploadController {
         Key: makeFileName(32) + ".jpg",
         Body: Buffer.from(base64, "base64"),
         ContentEncoding: "base64",
-        ContentType: "image/jpeg",
+        ContentType: extension === "pdf" ? "application/pdf" : "image/jpeg",
       };
 
       // Create an object and upload it to rhe Amazon S3 bucket.
