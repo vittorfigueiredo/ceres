@@ -53,9 +53,7 @@ class UploadController {
         ContentType: extension === "pdf" ? "application/pdf" : "image/jpeg",
       };
 
-      console.log(params);
-
-      // Create an object and upload it to rhe Amazon S3 bucket.
+      // Create an object and upload it to the Amazon S3 bucket.
       try {
         const results = await s3Client.send(new PutObjectCommand(params));
 
